@@ -1,0 +1,843 @@
+
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    justify-content: space-between;
+    background: rgb(127, 169, 207);
+}
+
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(127, 169,207);
+}
+a {
+    /* display: inline-block; */
+    color: white;
+    cursor: pointer;
+    /* text-decoration: none; */
+}
+a:hover {
+    border-bottom: 2px solid white;
+}
+p{
+    color: white;
+}
+
+#B10{
+
+  display: none;
+}
+  /* body {
+height: 100%;
+padding: 0;
+margin: 0;
+width: 100%;
+
+} */
+
+form {
+width:50%;
+height: 100%;
+float: left;
+text-align:start;
+margin-inline-start: 10px;
+}
+
+
+
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+  }
+  
+  /* The popup chat - hidden by default */
+  .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  /* Full-width textarea */
+  .form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+  }
+  
+  /* When the textarea gets focus, do something */
+  .form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+
+  
+#report {
+
+
+margin-left: 5%;
+margin-top: 5%;
+width: 400px;
+
+}
+
+  #treport {
+
+   font-size: 30px;
+   width: auto ;
+
+  }
+
+  #report1{
+    font-size: 20px;
+    width: auto ;
+
+  }
+
+
+
+  
+  
+  /* The popup chat - hidden by default */
+  .chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 25%;
+    right: 5%;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    background-color: rgba(255, 255, 255, 0.904);
+  }
+  
+  /* Add styles to the form container */
+  .gform {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  
+  /* Full-width textarea */
+  .gform textarea {
+    width: 265px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+  }
+  
+  /* When the textarea gets focus, do something */
+  .gform textarea:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/send button */
+  .gform .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 265px;
+    margin-bottom:10px;
+    opacity: 0.8;
+    
+  }
+
+  
+  
+  /* Add a red background color to the cancel button */
+  .gform .cancel {
+    background-color: red;
+   
+  }
+  
+  /* Add some hover effects to buttons */
+  .gform .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+  .bot2 {
+  
+    position: absolute;
+     display: block; 
+     top: 65%;
+     left: 58%
+    
+  }
+
+  .AClass{
+    right:-250px;
+    position: absolute;
+    cursor: pointer;
+    background:space ;
+    border:rgba(70, 131, 180, 0);
+}
+
+
+
+.chat-popupbot {
+  display: none;
+  position: fixed;
+  bottom: 50%;
+  right: 10%;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  background-color: white;
+  width: 600px;
+  height: 400px;
+}
+
+.form-containerbot {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+#floating-panel {
+  position: absolute;
+  top: 8%;
+  left: 35%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: "Roboto", "sans-serif";
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+
+#map {
+  
+    width: 60%;
+    height: 30%;
+    float: left;
+    text-align:left;
+    margin: 20px;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* #dt {
+
+display: none;
+
+
+} */
+
+
+.body_m {
+
+  font-size: 19px;
+  
+}
+
+#speed {
+ 
+  animation-name: speed;
+  animation-duration: 3s;  
+  animation-fill-mode: forwards;
+}
+
+@keyframes speed {
+  from {top: 65%; left: 30%;}
+
+  to {top:55%; left: 48%; }
+}
+
+#heart {
+ 
+  animation-name: heart;
+  animation-duration: 3s;  
+  animation-fill-mode: forwards;
+}
+
+@keyframes heart {
+
+  from {top: 65%; left: 30%;}
+
+  to {top:45%; left: 48%; }
+}
+
+#dis {
+ 
+  animation-name: dis;
+  animation-duration: 3s;  
+  animation-fill-mode: forwards;
+}
+
+@keyframes dis {
+
+  from {top: 65%; left: 30%;}
+
+  to {top:45%; left: 12%; }
+}
+#cal {
+ 
+  animation-name: cal;
+  animation-duration: 3s;  
+  animation-fill-mode: forwards;
+}
+
+@keyframes cal {
+
+  from {top: 65%; left: 30%;}
+
+  to {top:55%; left: 12%; }
+}
+
+#time {
+ 
+  animation-name: time;
+  animation-duration: 3s;  
+  animation-fill-mode: forwards;
+}
+
+@keyframes time {
+
+  from {top: 65%; left: 30%;}
+
+  to {top:45%; left: 30%; }
+}
+
+#hold {
+ 
+  animation-name: hold;
+  animation-duration: 3s;  
+  animation-fill-mode: forwards;
+}
+
+@keyframes hold {
+
+  from {top: 65%; left: 30%;}
+
+  to {top:55%; left: 30%; }
+}
+
+#safeTimerDisplay {
+ font-size: 150%;
+ top: 48%;
+ left:37%;
+ position: absolute;
+ 
+}
+
+
+#distance {
+  font-size: 150%;
+  top:47.5%;
+  left: 19.5%;
+  position: absolute;
+  
+ }
+ 
+ #speedkm {
+  font-size: 150%;
+  top: 57.5%;
+  left: 55.5%;
+  position: absolute;
+  
+ }
+ #mapm{
+  width: 85%;
+   height: 35%;
+    margin: 2%; 
+  }
+
+  .ms {
+
+
+    display:block;
+     position:absolute;
+      bottom:8%;
+      left: 78%;
+  
+  
+  
+   }
+
+ #se{
+
+  position: absolute;
+   left: 10%;
+   top: 50%;
+
+ }
+ 
+ #code {
+
+font-size: 20px;
+text-align: center;
+   position:absolute;
+    top:25% ;
+     right:10%;
+
+ }
+#ads{
+
+ display:block;
+  position:fixed;
+   bottom:76%;
+   left: 70%;  
+}
+
+#hold{
+
+  position: absolute;
+  left: 30%;
+  top:65%;
+  cursor: pointer;
+}
+
+#stop{
+
+  position: absolute;
+  left: 30%;
+  top:65%;
+  cursor: pointer;
+}
+
+#cal{
+
+  position: absolute;
+  left: 30%;
+  top:65% ;
+
+
+}
+
+#heart {
+
+  position: absolute;
+  left: 30%;
+  top:65% ;
+
+
+}
+
+#dis{
+  position: absolute;
+  left: 30%;
+  top:65% ;
+
+}
+
+#speed{
+
+  position: absolute;
+  left: 30%;
+  top:65% ;
+
+}
+
+
+#time{
+
+  position: absolute;
+  left: 30%;
+  top:65% ;
+
+}
+
+#bns{
+
+ position: absolute;
+  left: 10%;
+  top: 45%;
+  font-size: 20px;
+
+}
+
+#pay1{
+
+ position: absolute;
+  left: 51%;
+  top: 45%; 
+
+}
+
+#pay{
+
+  position: absolute;
+   left: 55%;
+   top: 45%;
+   margin-left: 10px;
+
+}
+
+#bsn3{
+
+  position: absolute; 
+  left: 30%;
+  top: 10%;
+  font-size: 30px;
+
+
+}
+  @media (min-width: 1000px) { 
+
+
+
+    
+    #bsn3{
+
+      position: absolute; 
+      left: 38%;
+      top: 20%;
+      font-size: 30px;
+    
+    
+    }
+    #pay{
+
+      position: absolute;
+       left: 55%;
+       top: 34%;
+    
+    }
+    #pay1{
+
+      position: absolute;
+       left: 51%;
+       top: 35%; 
+     
+     }
+    #bns{
+
+      position: absolute;
+       left: 42%;
+       top: 20%;
+       font-size: 20px;
+     
+     }
+
+     #B10{
+
+      display: block;
+    }
+    #floating-panel {
+      position: absolute;
+      top: 15%;
+      left: 20%;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+      text-align: center;
+      font-family: "Roboto", "sans-serif";
+      line-height: 30px;
+      padding-left: 10px;
+    }
+    #speed {
+ 
+      animation-name: speed;
+      animation-duration: 3s;  
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes speed {
+      from {top: 60%; left: 50%;}
+    
+      to {top:45%; left: 58%; }
+    }
+    
+    #heart {
+     
+      animation-name: heart;
+      animation-duration: 3s;  
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes heart {
+    
+      from {top: 60%; left: 50%;}
+    
+      to {top:25%; left: 58%; }
+    }
+    
+    #dis {
+     
+      animation-name: dis;
+      animation-duration: 3s;  
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes dis {
+    
+      from {top: 60%; left: 50%;}
+    
+      to {top:25%; left: 42%; }
+    }
+    #cal {
+     
+      animation-name: cal;
+      animation-duration: 3s;  
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes cal {
+    
+      from {top: 60%; left: 50%;}
+    
+      to {top:45%; left: 42%; }
+    }
+    
+    #time {
+     
+      animation-name: time;
+      animation-duration: 3s;  
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes time {
+    
+      from {top: 60%; left: 50%;}
+    
+      to {top:25%; left: 50%; }
+    }
+    
+    #hold {
+     
+      animation-name: hold;
+      animation-duration: 3s;  
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes hold {
+    
+      from {top: 60%; left: 50%;}
+    
+      to {top:45%; left: 50%; }
+    }
+
+    #safeTimerDisplay {
+     font-size: 150%;
+     top: 30%;
+     left: 53.5%;
+     position: absolute;
+     
+    }
+    
+    
+    #distance {
+      font-size: 150%;
+      top:29%;
+      left: 45.8%;
+      position: absolute;
+      
+     }
+     
+     #speedkm {
+      font-size: 150%;
+      top: 49%;
+      left: 61.8%;
+      position: absolute;
+      
+     }
+
+
+
+
+
+
+
+    #speed{
+      position: absolute;
+      left: 50%;
+      top:60%;
+      
+    }
+
+    #time {
+
+      position: absolute;
+      left: 50%;
+      top:60%;
+      
+    }
+    #dis{
+      position: absolute;
+      left: 50%;
+      top:60%;
+      
+    
+    }
+    #heart {
+
+      position: absolute;
+      left: 50%;
+      top:60%;
+      
+    
+    
+    }
+    #cal{
+
+      position: absolute;
+      left: 50%;
+      top:60%;
+      
+    
+    
+    }
+    #hold{
+
+      position: absolute;
+      left: 50%;
+      top:60%;
+      cursor: pointer;
+    }
+
+    #stop{
+
+      position: absolute;
+      left: 50%;
+      top:60%;
+      cursor: pointer;
+    }
+    #ads{
+
+      display:block;
+       position:fixed;
+        bottom:570px;
+        left: 84%;  
+     }
+    #se{
+
+      position: absolute;
+       left: 45%;
+       top: 20%;
+    
+     }
+    .ms {
+
+
+      display:block;
+       position:absolute;
+        bottom:8%;
+        left: 89%  
+    
+    
+     }
+  #mapm {
+  width: 40%; 
+  height: 50%; 
+  margin: 1%;
+
+}
+
+#report {
+
+
+  margin-left: 5%;
+  margin-top: 1%;
+  position:absolute;
+  top:12%;
+  left: 40%;
+  
+  }
+
+  .bot2 {
+  
+    position: absolute;
+    display: block; 
+    top: 40%;
+    left: 78%
+  }
+
+  #map {
+  
+    width: 35%;
+    height: 50%;
+    float: left;
+    text-align:left;
+    margin: 20px;
+}
+
+form {
+  width:35%;
+  height: 100%;
+  float: left;
+  text-align:start;
+  margin-inline-start: 10px;
+  }
+  #code {
+   
+    width:160px ;
+     height: 90px;
+      position:absolute;
+       top:130px ;
+        right: 400px;
+   
+    }
+
+
+  }
+
+
+ 

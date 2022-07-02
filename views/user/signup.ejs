@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>Smart Bicycle</title>
+  <link rel="shortcut icon" href="/img/logo_title.png" />
+  <link rel="stylesheet" href="/css/login-page.css">
+  
+
+ 
+</head>
+
+<body>
+
+  
+  
+  <main id="main-holder">
+    
+    <div class="imgcontainer">
+      <img src="/img/logo1 copy.png" alt="logo" class="logo">
+    </div>
+    
+    <% if (locals.error && error !="") {%>
+
+    <div style="color: #8a0000;border: #8a0000 solid 1px;background-color: #e58f8f;font-weight: bold;">
+        <%=error%>
+    </div>
+    <%}%>
+    <form id="login-form" action="/user/signup" method="post">
+
+      <input type="text" name="fullname" id="fullname" class="login-form-field" placeholder="Full name">
+      <input type="text" name="username" id="username" class="login-form-field" placeholder="Username">
+      <input type="password" name="password" id="password" class="login-form-field" placeholder="Password">
+      <input type="password" name="password2" id="password2" class="login-form-field" placeholder="Confirm Password">
+      <input type="submit" value="Sign up" id="login-form-submit"><br/> <a href="/user/login"> for login  </a>
+    </form>
+  
+  </main>
+</body>
+
+</html>
+
+  

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>Smart Bicycle</title>
+  <link rel="shortcut icon" href="/img/logo_title.png" />
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeQ6TIIFkgS94pT3xWbwCQGTqCwxlHMQo" defer></script>
+          <script defer src="/js/map.js"  ></script>
+          <link rel="stylesheet" href="/css/main.css">
+          <script defer src="/js/logout.js"></script>
+          <script type="text/javascript" src="/js/index.js" defer  ></script>
+          <script type="text/javascript" src="/js/constants.js" defer></script>
+          <script type="text/javascript" src="/js/form-submission-handler.js" defer></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+          <script src="/axios/dist/axios.min.js"> </script>
+          
+          <script>
+
+            function openForm() {
+              document.getElementById("myForm").style.display = "block";
+            }
+            
+            function closeForm() {
+              document.getElementById("myForm").style.display = "none";
+
+            }
+
+            function closebot() {
+              document.getElementById("bot1").style.display = "none";
+              
+            }
+
+            
+            function closeFormbot() {
+              document.getElementById("myFormbot").style.display = "none";
+
+            }
+
+           
+
+
+            function getLocation() {
+
+            if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+              } else { 
+              x.innerHTML = "Geolocation is not supported by this browser.";
+
+    }
+  }
+  
+  function showPosition(position) {
+
+    window.localStorage.setItem('lati',position.coords.latitude); 
+   window.localStorage.setItem('long',position.coords.longitude);
+  
+  
+  }
+
+  
+
+            </script>
+
+
+</head> 
+
+
+<header>
+  <a href="/home/main"><img src="/img/logo copy.png" alt="logo"></a>
+   
+    <div>
+    <a href="/home/main"><img src="/img/home.png" alt="Home"></a>
+    <a href="/search/manger"><img src="/img/search.png" alt="Search"></a>   &nbsp
+    <a href="/manage/manger"><img src="/img/manage.png" alt="Manage"></a> &nbsp
+    <a ><img src="/img/log out.png" id="logout"></a>
+   
+    </div>
+
+   
+
+
+<a  href="/home/admin"><img src="/img/manger.png" alt="manager"> </a>
+</header>
+
+
+
+  
+<body onload="getLocation();"></body>
+ 
+  
+
+ <div id="mapm" >  </div>
+
+
+<div style=" right:  88%; font-size: 30px; margin: 20px; "> 
+  
+  <label style="color:green;">Available   :  <label id = "numA" > </label> </label> <br/> 
+  <label style="color:blue;">In use : <label id = "numUn" > </label> </label>  <br/> 
+ <label style="color: orange;">Maintenance : <label id = "numM" > </label> </label>  <br/> 
+
+</div>
+
+
+
+<div id = "report">
+
+ <label id = "treport">Report :</label> 
+
+<select  style="width: 100px;" onchange="reports2(this)">
+
+    <option   value="State">Report Date</option>  
+    <option value="Today" >Today</option>
+    <option value="Last week" >Last week</option>
+    <option value="Last month">Last month</option>
+    <option value="Last year" >Last year</option>
+    
+</select>
+<br/><br/>
+
+<div id = "report1">
+<label>Number of Rental times :</label> <label id="nor"></label> <br/>
+<label>Income  :</label>        <label id="In"></label> <br/>
+<label>Usage Average   :</label> <label id="Avu"></label> <br/>
+<label>Coin Pay :</label> <label id="noo2"></label> <br/>
+<label>Card Pay :</label> <label id="noo3"></label> <br/>
+<label>Online Pay  :</label> <label id="noo"></label> <br/>
+
+</div>
+
+
+<canvas id="myChart" style="width:100%;max-width:600px ;margin-top: 30px;margin-left: -5%;"></canvas>
+
+<canvas id="myChart2" style="width:100%;max-width:600px ;margin-top: 30px;margin-left: -5%;"></canvas>
+
+</div>
+
+
+
+
+  
+
+
+  <a  class="ms"  onclick="openForm()" ><img src="/img/msg2.png" alt="msg"   ></a>
+
+  <div class="chat-popup" id="myForm">
+
+    
+    <form class="gform" action = "https://script.google.com/macros/s/AKfycbzUQiL6G3GqrXqjj190W5_t7I5Kvv--SlCdHJGfzboJDDpGiT8CuEYvtlXTe2MboFcT/exec"  >
+
+      <h1>CONTACT&nbspUS</h1>
+
+      <label for="name"><b>name:</b></label>
+      <input type="text"  name="name" required></input>
+
+      <label for="email"><b>Email:</b></label>
+      <input type="text"  name="email" required></input>
+  
+      <label for="msg"><b>Message</b></label>
+      <textarea placeholder="Type message.." name="msg" required></textarea>
+
+
+      
+
+      <div style="display:none ; font-size: 20px; position:absolute;" class="thankyou_message" >
+        
+        <div><em>Thanks</em> for contacting us! We will get back to you soon!</div>
+        
+       </div><br><br><br>
+
+       
+      
+      <button type="submit" class="btn">Send</button>
+    
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+     
+      
+    
+    
+    
+   
+    </form>
+
+    
+
+
+  </div>
+
+  
+
+
+  <div class = "bot2"  >
+
+    <form  id="bot1"  >
+
+      <div  style="position:absolute; display: block; top: 25%; left: 40%  "  >
+          <button  type="button" class="close AClass" onclick="closebot()">
+             <span>&times;</span>
+          </button>
+        </div>
+      
+
+
+        <a  onclick="window.open('/home/chatbot','name','width=590,height=400,left=1200,top=70')"  > <img  src="/img/bot.gif" alt="msg1" width="400" height="290 "   >   </a>
+      </form>
+
+      
+    </div>
+       
+
+  </body>
+           
+
+
+
+
+
+
+
+
+<footer>
+
+    
+    <div >
+        <a style="color: white;" href="/term_privacy/term">Terms of Use   </a>  <a > &nbsp | &nbsp </a>  <a href="/term_privacy/privacy" >    Privacy Policy</a> 
+       
+    </div>
+    <p>© 2021 Smart Bicycle - All Right reserved</p>
+    <div>
+    <a href=""><img src="/img/App store.png" alt="appstore"></a>
+    <a href=""><img src="/img/google store.png" alt="googlestore"></a>
+    </div>
+    <div>
+    <a href="https://www.facebook.com/profile.php?id=100073329443653"><img src="/img/facebook.png" alt="facebook"></a>
+    <a href="https://twitter.com/smart_bicycles_"><img src="/img/tweter.png" alt="twetter"></a>
+    <a href="https://instagram.com/smart.bicycle_?utm_medium=copy_link"><img src="/img/inst.png" alt="inst"></a>
+</div>
+</div>
+
+</footer>
+
+</html>

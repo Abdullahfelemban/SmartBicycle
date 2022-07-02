@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Bicycle</title>
+    <link rel="shortcut icon" href="/img/logo_title.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
+ <style>
+ .btn {
+    background-color: #04aa6d00;
+    color: black;
+    padding: 16px 20px;
+    border: 1px solid black;
+    cursor: pointer;
+    width: 265px;
+    margin-bottom:10px;
+    opacity: 0.8;
+    font-size: 16px;
+  }
+#youtube {
+
+height: 100px;
+ width: 200px;
+  padding: 2px;
+   position: sticky;
+  left: 80px;
+
+
+}
+
+footer {
+    display: block;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    position:relative;
+    width: 100%;
+    height: 180px;
+    
+    background: rgb(127, 169,207);
+}
+
+
+  @media (min-width: 1000px) { 
+ footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:relative;
+    width: 100%;
+    height: 70px;
+    background: rgb(127, 169,207);
+
+}
+#youtube {
+
+  height: 720px;
+   width: 1080px;
+    padding: 100px;
+     position: sticky;
+      left: 410px;
+
+
+}
+
+  }
+ </style>
+
+
+
+</head>
+
+
+<body>
+ 
+  <div>
+
+    <nav class="navbar navbar-light bg-light fixed-top" style="height: 70px;" >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/main/main" ><img src="/img/logonew.png" alt="Home"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width: 300px;">
+            <div class="offcanvas-header">
+             
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                   
+                    <a href="/user/login"> <button type="submit" class="btn">Login</button></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/user/signup">  <button type="submit" class="btn">Sigin up</button></a>
+                   
+                </li>
+                
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+    </div>
+  
+  
+
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-interval="false" style="margin-top: 70px ;">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="ratio ratio-21x9">
+                <img src="/img/caroo2.png" class="d-block w-100" alt="...">
+              </div>
+          </div>
+          <div class="carousel-item">
+            <div class="ratio ratio-21x9">
+                <img src="/img/background2.png" alt="">
+                  <div>
+                  <iframe id="youtube" src="https://www.youtube.com/embed/-sQ2FLwb1PA" title="YouTube video"></iframe>
+                </div>
+              </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      </div>
+      <br>
+      
+      <h3 style="text-align: center;" class="animate__animated animate__slideInUp">الفكرة العامة</h3><br>
+      <p style="color: rgb(53, 53, 53); text-align: center;">هو إيجار دراجات الهوائية لربط مقر سكنك وإقامتك بمحطات الباص والعكس، يسمح بتأجير الدراجات بالدقائق أو الساعات من دون محل أو تدخل بشري <br> حيث تتواجد الدراجات في الأماكن العامة مثل الحادئق العامة ومحطات الباص، ومن خلال تطبيق وموقع على الجوال يستطيع العميل <br> معرفة أقرب دراجة له ودفع المبلغ المطلوب، ثم بعد الإنتهاء من الدراجة يتم تركها في مكان عام وأمن</p><br>
+      <h3 style="text-align: center;" class="animate__animated animate__slideInUp">مميزات الدراجة الذكية</h3><br>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="card" style="width: 18rem;height: 440px;">
+              <img src="/img/Bikes-Renaissance-360x360.jpg" class="card-img-top animate__animated animate__zoomIn" alt="...">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center;">موقع إيقاف الدراجة</h5> 
+                <p class="card-text"style="text-align: center;" >يوجد لدينا محطات إيقاف للدراجة لكن بإمكانك عدم الإلتزام بها وإيقاف دراجتك بأي مكان عام وأمن</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem;height: 440px;">
+              <img src="/img/payment.png" class="card-img-top animate__animated animate__zoomIn" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"style="text-align: center;">طرق الدفع</h5>
+                <p class="card-text"style="text-align: center;">يمكنك الدفع عن طريق الموقع أو التطبيق وأيضاً يمكنك الدفع عن طريق العملات المعدنية أو الشبكة</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">            <div class="card" style="width: 18rem; height: 440px;">
+              <img src="/img/hold2.png" class="card-img-top animate__animated animate__zoomIn" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"style="text-align: center;">HOLD</h5>
+                <p class="card-text"style="text-align: center;">توجد لدينا خدمة مميزة تتيح لك وضع الدراجة في حالة انتظار عند الذهاب لمحل أو مطعم ولا يتم أخذ عليها نقود أو إستئجار الدراجة من قبل شخص آخر</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem;height: 440px;">
+              <img src="/img/259461907_117599230729785_7782225233058429537_n.jpg" class="card-img-top animate__animated animate__zoomIn" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"style="text-align: center;">النقاط</h5>
+                <p class="card-text"style="text-align: center;">توجد نقاط تأتيك من خلال استخدامك للدراجات ويمكنك استبدالها بمبالغ واستخدامها بالتطبيق او الشراء من الشركات المشاركة</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>        
+</body>
+
+<br>
+<footer>
+
+   
+  <div id="co" >
+      <a style="color: white;" href="/term_privacy/term" >Terms of Use   </a>  <a style="color: white;"> &nbsp | &nbsp </a>  <a  style="color: white;" href="/term_privacy/privacy" >    Privacy Policy</a> 
+     
+  </div>
+  <p style="color: white;" >© 2022 Smart Bicycle - All Right reserved</p>
+  <div id="add">
+  <a href=""><img src="/img/App store.png" alt="appstore" class="app" ></a>
+  <a href=""><img src="/img/google store.png" alt="googlestore" class="app"> </a>
+  </div>
+  <div id="so">
+  <a  href="https://www.facebook.com/profile.php?id=100073329443653"><img src="/img/facebook.png" alt="facebook" ></a>
+  <a href="https://twitter.com/smart_bicycles_"><img src="/img/tweter.png" alt="twetter" ></a>
+  <a href="https://instagram.com/smart.bicycle_?utm_medium=copy_link"><img src="/img/inst.png" alt="inst" ></a>
+</div>
+</div>
+
+</footer>
+
+
+</html>

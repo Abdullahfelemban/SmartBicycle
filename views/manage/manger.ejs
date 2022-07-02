@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>Smart Bicycle</title>
+  <link rel="shortcut icon" href="/img/logo_title.png" />
+ 
+          <link rel="stylesheet" href="/css/main.css">
+          <script defer src="/js/logout.js"></script>
+          <script defer src="/js/bike_manage.js"></script>
+          <script src="/axios/dist/axios.min.js"> </script>
+<style>
+
+
+   
+
+    label {
+    display: inline-block;
+    width: 130px;
+    text-align: left;
+    
+  }
+
+
+</style>
+ 
+
+
+
+
+</head> 
+
+<header>
+     <a href="/home/main"><img src="/img/logo copy.png" alt="logo"></a>
+   
+    <div>
+    <a href="/home/main"><img src="/img/home.png" alt="Home"></a>
+    <a href="/search/manger"><img src="/img/search.png" alt="Search"></a>   &nbsp
+    <a href="/manage/manger"><img src="/img/manage.png" alt="Manage"></a> &nbsp
+    <a ><img src="/img/log out.png" id="logout"></a>
+   
+    </div>
+
+   
+
+<a href=""><img src="/img/manger.png" alt="manager"> </a>
+</header>
+
+
+<body >
+     
+    <div class="body_m" >
+
+    <form >
+
+     <h2>Manage Personal Information</h2><br> 
+     <div> <label for="name"> Full Name:  </label> <input type="text" name="fname" id="fnamef"  placeholder= "<%= fullname %>" > </div> <br/> 
+     <div> <label for="username"> Username: </label> <input type="text" name="mo" id="mof"  placeholder= "<%= username %>"  > </div><br/> 
+     <div> <label for="Pass"> Password: </label> <input type="password" name ="pass" id="passf" placeholder="*******" > </div><br> 
+     <br>  <br> <br><br><br> <br> 
+      
+    
+      <h2>Manage Maintenance</h2>
+     <label for="name"> Add Bicycle </label> 
+    <div> <label for="numberofbike"style =" text-align:center; "> NO:  </label> <input type="text"  id="maint"> <input type="submit" value="Add to maintenance  " id="maint2"  > </div> <br/> 
+      
+    
+  
+     
+     
+     
+     
+     
+    </form>
+
+    
+
+
+   <form action="/manage/manger" method="post" >
+    <h2>Manage Smart Bicycle</h2><br> 
+     <label for="ADDB"> Add Bicycle   </label>
+     <div> <label for="numberofbike "style =" text-align:center; "> NO:  </label> <input type="text" name="no1" id="no1f"  >    </div> <br/> 
+     <div> <label for="locx "style =" text-align:center; "> x:  </label> <input type="text" name="locx" id="loxf"  >  </div>  <br/>
+     <div><label for="locy "style =" text-align:center; "> y:  </label> <input type="text" name="locy" id="loxy"  > <input type="submit" value="Add" id="Add"  > </div>
+        
+     <div>  <% if(message) {%><p style="color: green;font-size: 16px;text-align: center;"><%= message %></p>  <%}%>
+         <% if(message1) {%><p style="color: red;font-size: 16px;text-align: center;"><%= message1 %></p>  <%}%><br/><br/>
+        </div>
+        </form><br/>
+
+     
+
+     <form  id="remove" >
+        <label for="RemoveB"> Remove Bicycle    </label>
+     <div> <label for="numberofbike"style =" text-align:center;"> NO:  </label> <input type="text" name="no2" id="no2f"  >  <input type="submit" value="Remove" id="Remove" > </div> <br/>
+      
+    </form>
+    <form  >
+     <label for="StopB"> Stop Bicycle    </label>
+     <div> <label for="numberofbike"style =" text-align:center;"> NO:  </label> <input type="text" name="no3" id="no3f"  >  <input type="submit" value="Stop" id="Stop"  > </div> <br/> 
+    </form>
+
+  
+    <form  >
+     <label for="CheckB"> Check Status    </label>
+     <div> <label for="numberofbike"style =" text-align:center;"> NO:  </label> <input type="text" name="no4" id="no4f"  > <input type="submit" value="Check" id="Check"  >  </div> <br/> 
+     <br> 
+     <br> 
+    </form>
+   
+
+
+  </div>
+</body>
+
+
+
+<footer>
+    <div >
+        <a style="color: white;" href="/term_privacy/term">Terms of Use   </a>  <a > &nbsp | &nbsp </a>  <a href="/term_privacy/privacy" >    Privacy Policy</a> 
+       
+    </div>
+    <p>© 2021 Smart Bicycle - All Right reserved</p>
+    <div>
+    <a href=""><img src="/img/App store.png" alt="appstore"></a>
+    <a href=""><img src="/img/google store.png" alt="googlestore"></a>
+    </div>
+    <div>
+    <a href="https://www.facebook.com/profile.php?id=100073329443653"><img src="/img/facebook.png" alt="facebook"></a>
+    <a href="https://twitter.com/smart_bicycles_"><img src="/img/tweter.png" alt="twetter"></a>
+    <a href="https://instagram.com/smart.bicycle_?utm_medium=copy_link"><img src="/img/inst.png" alt="inst"></a>
+</div>
+</div>
+</footer>
+</html>

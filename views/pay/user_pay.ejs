@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>Smart Bicycle</title>
+  <link rel="shortcut icon" href="/img/logo_title.png" />
+ 
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCeQ6TIIFkgS94pT3xWbwCQGTqCwxlHMQo"defer></script>
+          
+          <script defer src="/js/pay.js"  ></script>
+          <link rel="stylesheet" href="/css/main.css">  
+          <script defer src="/js/user_logout.js"></script>
+          <script src="/axios/dist/axios.min.js"> </script>
+        
+
+          <script>
+      
+
+      var points 
+      axios.get('/home/point')
+    .then((responseArr ) => {
+    
+      let point = responseArr.data
+    
+      
+       points =  (point[0].point).toFixed(0);
+       document.getElementById("pointshow").innerHTML = points + " points ="+((points/100)*0.1).toFixed(2) + "SR" ;
+    
+    })
+
+
+
+              function getnum(){
+           
+            document.getElementById("pay_page").innerHTML = window.localStorage.getItem('Bnumber');
+            document.getElementById('Bn').value = window.localStorage.getItem('Bnumber');
+              }
+
+              var  time =0 ;
+              var amount =0 ;  
+              var point =0 ;
+              var clickp = 0 ;
+             
+              
+              function dispoint(){
+
+                if(clickp==0){
+               console.log((points/100)*0.1)
+               amount = amount - ((points/100)*0.1) ;
+               if(amount<0){
+                 amount=0
+               }
+               document.getElementById("A2").innerHTML = amount.toFixed(2)  + " SR" ;
+               clickp=1;
+                }
+
+              } 
+             
+              function gettime1(t,a){
+               
+              
+                time = time + t ;
+                amount = amount + a ;
+                point1 = amount*100
+                
+
+                document.getElementById("T2").innerHTML = time + " min";
+                document.getElementById("A2").innerHTML = amount.toFixed(2) + " SR" ;
+                document.getElementById('Ti').value = time;
+                document.getElementById('Am').value = amount;
+              }
+
+              function clear1(){
+                time=0;
+                amount=0;
+                clickp=0
+                document.getElementById("T2").innerHTML = "";
+                document.getElementById("A2").innerHTML = "" ;
+                document.getElementById("pay_page").innerHTML = "";
+                window.localStorage.setItem('Bnumber',"");
+                document.getElementById('Bn').value = "";
+              }
+
+
+             
+              const bikenum = window.localStorage.getItem('Bnumber')
+
+
+
+
+              function paymentdone(){
+
+               
+                  if (window.localStorage.getItem('Bnumber') == "" ){
+                    
+                  alert("select bike please")
+                 }
+                else if (time == 0 ){
+
+                 alert("select the time please")
+                   }
+
+                  else {
+                   
+                    if(clickp==1){
+                    axios.post('/pay/pay3/'+ 0)
+                    window.location.href="/home/user_main2";
+                    axios.post('/pay/pay/' + bikenum)
+                    window.localStorage.setItem('time',time);
+
+                  }else
+                    axios.post('/pay/pay2/' + point1)
+                    window.location.href="/home/user_main2";
+                    axios.post('/pay/pay/' + bikenum)
+                    window.localStorage.setItem('time',time);
+                    
+                  
+                  }
+
+
+
+              }
+
+            
+             
+            </script>
+
+
+</head> 
+
+<header>
+  <a href="/home/user_main"><img src="/img/logo copy.png" alt="logo"></a>
+    <div>
+    <a href="/home/user_main"><img src="/img/home.png" alt="Home"></a>
+    <a href="/search/user"><img src="/img/search.png" alt="Search"></a>
+    <a href="/pay/user_pay"><img src="/img/pay.png" alt="Pay"></a>
+    <a href="/manage/user"><img src="/img/manage.png" alt="Manage"></a>
+    <a ><img src="/img/log out.png" id="logout"></a>
+    </div>
+<a href=""><img src="/img/user1.png" alt="manager"></a>
+</header>
+
+
+<body onload="getnum()" >
+  
+    <div id = "map1" style="display: none;">
+
+        <div id="map" >  </div>
+       
+    </div>
+
+    <div id="bsn3">
+        <label for="search "style =" text-align:center; "> Bicycle number : </label> <input type="text" name="search" id="ser" style="width: 140px;height: 30px;font-size: 16px;" > 
+        
+        <input type="submit" value="select" id="ser1" style="width: 70px; height: 30px; font-size: 20px; "> <br/>
+        
+      </div>
+           
+      <label for="find "style ="  position: absolute; left: 51%;top: 24% ; color: red  " id = "find" >  </label> <br>
+
+
+<div style="text-align: center; margin-top: 150px;">
+
+
+    <a onclick="gettime1(2,1)" ><img src="/img/payb2.png" width="170px"></a>
+    <a onclick="gettime1(5,2)"><img src="/img/payb5.png" width="170px"></a>
+    <a onclick="gettime1(15,5)"><img src="/img/payb10.png" width="170px"></a>
+    <a onclick="gettime1(30,9)"><img src="/img/payb30.png" width="170px"></a>
+
+
+
+</div>
+
+
+<form  style="position: absolute; margin-top: 80px;font-size: 30px; top: 50 ; left: 40%;" action="/pay/user_pay" method="post">
+
+ 
+  <input type="hidden" value=""  id="Ti" name="Ti" > </input>
+  <input type="hidden" value=""  id="Am" name="Am" > </input>
+  <input type="hidden" value=""  id="Bn" name="Bn" > </input>
+
+
+    <label style="text-align: start;" for="ar"> Bicycle number : </label> 
+    <label  id="pay_page" ></label>  <br/>
+
+    <label style="text-align: start;" > Time : </label> 
+    <label type="hidden" id="T2" name="Ti" > </label>  <br/>
+
+    <label style="text-align: start;"> Amount : </label> 
+    <label type="hidden" id="A2" name="Am" > </label>  <br/>
+
+    <input type="button" onclick="dispoint()" id="points"  value="use points">
+    <label id="pointshow" style="font-size: 18px;"></label>
+    <br><br><br/><br/>
+   
+
+    <input type="button" onclick ="clear1()" value="clear"  style="width: 70px; height: 30px; font-size: 20px;float:left ; margin-right: 20px;">
+    <input type="submit" onclick="paymentdone()" value="Pay" style="width: 70px; height: 30px; font-size: 20px;float:left; "> 
+ 
+</form>
+
+
+
+
+
+
+  
+
+
+</body>
+
+
+
+
+<footer>
+
+    
+  <div >
+    <a style="color: white;" href="/term_privacy/term">Terms of Use   </a>  <a > &nbsp | &nbsp </a>  <a href="/term_privacy/privacy" >    Privacy Policy</a> 
+   
+</div>
+    <p>© 2021 Smart Bicycle - All Right reserved</p>
+    <div>
+    <a href=""><img src="/img/App store.png" alt="appstore"></a>
+    <a href=""><img src="/img/google store.png" alt="googlestore"></a>
+    </div>
+    <div>
+    <a href="https://www.facebook.com/profile.php?id=100073329443653"><img src="/img/facebook.png" alt="facebook"></a>
+    <a href="https://twitter.com/smart_bicycles_"><img src="/img/tweter.png" alt="twetter"></a>
+    <a href="https://instagram.com/smart.bicycle_?utm_medium=copy_link"><img src="/img/inst.png" alt="inst"></a>
+</div>
+</div>
+
+</footer>
+
+</html>

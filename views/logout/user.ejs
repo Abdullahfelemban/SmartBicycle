@@ -1,0 +1,122 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+        <link rel="shortcut icon" href="/img/logo_title.png" />
+      <title> Smart Bicycle </title>
+      <link rel="stylesheet" href="/css/logout.css">
+      
+
+
+      <script type="text/javascript">
+        function disableBack() { window.history.forward(); }
+        setTimeout("disableBack()", 0);
+        window.onunload = function () { null };
+
+
+ 
+</script>
+
+<style>
+
+
+
+</style>
+
+    </head> 
+        <body >
+         <div class ="logo">
+    <a href="/home/user_main"><img src="/img/logo1 copy.png" alt="logo" class="logo"></a>
+
+        </div>
+
+       
+
+            <div class="alert">
+
+                
+              
+                <div> how was your visit?</div>
+
+
+               
+                <form  action="/logout/user" method="post">
+
+          
+                  
+
+                 
+                 <div class="rate"> 
+                  <p style="font-size: 22px;position: absolute; right: 170px;margin-top: 9px;" >Website:</p>
+                 <input type="radio" id="star5" name="rate" value="5" />
+                 <label for="star5" title="text">5 stars</label>
+                 <input type="radio" id="star4" name="rate" value="4" />
+                 <label for="star4" title="text">4 stars</label>
+                 <input type="radio" id="star3" name="rate" value="3" />
+                 <label for="star3" title="text">3 stars</label>
+                 <input type="radio" id="star2" name="rate" value="2" />
+                 <label for="star2" title="text">2 stars</label>
+                 <input type="radio" required id="star1" name="rate" value="1" />
+                 <label for="star1" title="text">1 star</label>
+                </div>
+
+                <div  class="rate2">
+                  <p style="font-size: 22px;position: absolute; right: 170px;margin-top: 9px;" >Bicycle:</p>
+                 <input type="radio" id="star55" name="rate2" value="5" />
+                 <label for="star55" title="text">5 stars</label>
+                 <input type="radio" id="star44" name="rate2" value="4" />
+                 <label for="star44" title="text">4 stars</label>
+                 <input type="radio" id="star33" name="rate2" value="3" />
+                 <label for="star33" title="text">3 stars</label>
+                 <input type="radio" id="star22" name="rate2" value="2" />
+                 <label for="star22" title="text">2 stars</label>
+                 <input type="radio" required id="star11" name="rate2" value="1" />
+                 <label for="star11"  title="text">1 star</label>
+
+                </div>
+
+                <div  class="rate3">
+                  <p style="font-size: 22px;position: absolute; right: 170px;margin-top: 9px;" >Price:</p>
+                  <input type="radio" id="star555" name="rate3" value="5" />
+                  <label for="star555" title="text">5 stars</label>
+                  <input type="radio" id="star444" name="rate3" value="4" />
+                  <label for="star444" title="text">4 stars</label>
+                  <input type="radio" id="star333" name="rate3" value="3" />
+                  <label for="star333" title="text">3 stars</label>
+                  <input type="radio" id="star222" name="rate3" value="2" />
+                  <label for="star222" title="text">2 stars</label>
+                  <input type="radio" required id="star111" name="rate3" value="1" />
+                  <label for="star111" title="text">1 star</label>
+ 
+                 </div>
+
+                 <button type="submit"  id="Rate" > Rate </button>
+                 <% if(message) {%><p style="color: white;font-size: 22px;text-align: center;"><%= message %></p>  <%}%>
+                 
+                </form>
+
+                <div id="b2">
+              <button style="cursor: pointer;float:right;margin: 2px;" onclick = "window.location.href= '/user/logoutF'  " > Log Out</button>
+
+             <button style="cursor: pointer; float: right;margin: 2px;" onclick =  "window.location.href= '/home/user_main'  "  > Cancle </button>
+
+            </div>
+
+             
+
+
+
+
+
+
+
+
+
+              </div>
+
+              
+            
+             
+        </body>
+    
+        </html>

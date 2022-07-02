@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <title>Smart Bicycle</title>
+  <link rel="shortcut icon" href="/img/logo_title.png" />
+  <script src="http://maps.google.com/maps/api/js?sensor=false" 
+          type="text/javascript"defer></script>
+          <link rel="stylesheet" href="/css/main.css">
+          <script defer src="/js/user_logout.js"></script>
+
+<style>
+
+
+    
+
+    label {
+    display: inline-block;
+    width: 130px;
+    text-align: left;
+    
+  }
+</style>
+
+<script>
+   
+
+    
+   
+
+    </script>
+
+
+
+</head> 
+
+<header>
+    <a href="/home/user_main"><img src="/img/logo copy.png" alt="logo"></a>
+    <div>
+    <a href="/home/user_main"><img src="/img/home.png" alt="Home"></a>
+    <a href="/search/user"><img src="/img/search.png" alt="Search"></a>
+    <a href="/pay/user_pay"><img src="/img/pay.png" alt="Pay"></a>
+    <a href="/manage/user"><img src="/img/manage.png" alt="Manage"></a>
+    <a ><img src="/img/log out.png" id="logout"></a>
+    </div>
+<a href=""><img src="/img/user1.png" alt="manager"></a>
+</header>
+
+
+<body >
+     
+
+    
+    <div class="body_m" >
+
+    <form action="/manage/user" method="post"  >
+
+     <h2>Manage Personal Information</h2>
+     <div> <label for="name"> Full Name:  </label> <input type="text" name="fullname" id="fullname" required placeholder="<%= fullname %>"> </div> <br/> 
+     <div> <label for="username"> Username: </label>  <input type="text" name="username" id="username"  placeholder="<%= username %>"> </div><br/> 
+     <div> <label for="Pass"> Password: </label>  <input type="password" name="password" id="password"  placeholder="*****"> </div><br> 
+     <div> <label for="copass"> New Password: </label>  <input type="password" name="password2" required id="password2"  placeholder="*****"> </div><br/> 
+     <br> 
+     <br> 
+     <div>  <input type="submit" value="Update" id="MPI"   > </div> <br/> 
+</form>
+</div>
+
+</body>
+
+
+
+<footer>
+    <div >
+        <a style="color: white;" href="/term_privacy/term">Terms of Use   </a>  <a > &nbsp | &nbsp </a>  <a href="/term_privacy/privacy" >    Privacy Policy</a> 
+       
+    </div>
+    <p>© 2021 Smart Bicycle - All Right reserved</p>
+    <div>
+    <a href=""><img src="/img/App store.png" alt="appstore"></a>
+    <a href=""><img src="/img/google store.png" alt="googlestore"></a>
+    </div>
+    <div>
+    <a href="https://www.facebook.com/profile.php?id=100073329443653"><img src="/img/facebook.png" alt="facebook"></a>
+    <a href="https://twitter.com/smart_bicycles_"><img src="/img/tweter.png" alt="twetter"></a>
+    <a href="https://instagram.com/smart.bicycle_?utm_medium=copy_link"><img src="/img/inst.png" alt="inst"></a>
+</div>
+</div>
+</footer>
+</html>
