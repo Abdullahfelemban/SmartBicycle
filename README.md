@@ -25,8 +25,22 @@
 [![IMAGE ALT TEXT HERE](https://user-images.githubusercontent.com/104203036/177032043-f5004295-16a0-40f1-9c5b-6bf64b15eec0.png)
 ](https://www.youtube.com/embed/-sQ2FLwb1PA)
 
+ <h1> التقنية المستخدمة في الموقع: </h1>
+<li > Front End: HTML, JavaScript, CSS, Bootstrap</li>
+<li > Back End: Node.js, Express.js, MongoDB</li>
+<li > Embedded JavaScript</li>
+
 <h1> تصميم الدراجة: </h1>
 
 ![bikeprototybe copy](https://user-images.githubusercontent.com/104203036/177032237-1f92cb7d-1c87-4044-be75-729d710ea1eb.png)
+
+<h1> العتاد: </h1>
+
+<li >Arduino Yún</li>
+<li >ESP32</li>
+<li >GPRS GSM GPS Shield (AI- A7)</li>
+<li >PIR Sensor</li>
+<li >huawei router</li>
+<li >12v battery</li>
 
 
