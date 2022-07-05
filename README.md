@@ -40,7 +40,7 @@
 <li >ESP32</li>
 <li >GPRS GSM GPS Shield (AI- A7)</li>
 <li >PIR Sensor</li>
-<li >huawei router</li>
+<li >Router</li>
 <li >12v battery</li>
-
+<li >Robot Servo 12v</li>
 
